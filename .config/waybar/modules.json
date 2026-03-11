@@ -38,29 +38,9 @@
         "interval": 2
     },
 
-    "cpu": {
-        "format": "󰍛 {usage}%",
-        "interval": 2
-    },
-
-    "memory": {
-        "format": "󰾆 {percentage}%",
-        "interval": 2
-    },
-
     "custom/gpu-usage": {
         "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk -F', ' '{printf \"󰾲 %s%% %s°C\", $1, $2}'",
         "interval": 2,
         "exec-if": "which nvidia-smi"
     },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰝟 Muted",
-        "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
-        },
-        "on-click": "pavucontrol",
-        "scroll-step": 5
-    }
 }
